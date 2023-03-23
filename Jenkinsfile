@@ -24,5 +24,11 @@ pipeline {
       }
     }
 
+    stage('Waiting') {
+      steps {
+        input(message: 'Proceed?', id: 'Proceed')
+      }
+    }
+
   }
 }
