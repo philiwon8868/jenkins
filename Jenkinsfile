@@ -4,18 +4,21 @@ pipeline {
     stage('Build') {
       parallel {
         stage('Build') {
+          agent any
           steps {
             echo 'Building...'
           }
         }
 
         stage('Test') {
+          agent any
           steps {
             echo 'Testing...'
           }
         }
 
         stage('Deploy') {
+          agent any
           steps {
             echo 'Deploying...'
           }
@@ -25,6 +28,7 @@ pipeline {
     }
 
     stage('Waiting') {
+      agent any
       steps {
         input(message: 'Proceed?', id: 'Proceed')
       }
